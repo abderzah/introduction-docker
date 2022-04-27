@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+<style type="text/css" media="screen">
+   #tip {
+      min-height: 100px;
+      background-image: url(images/tip.png);
+      background-repeat: no-repeat;
+      background-position: left ;
+      margin-bottom: 90px;
+      padding-left:100px;
+      padding-top:5px;
+     color: #000000;
+     font-size: 18px !important;
+     border-color: #FFFFFF; !important;
+     background-color: rgba(84,174,255,0.1); !important;
+     border-radius: 4px !important;
+     border: 1px solid #000000; !important;
+   }
+</style>
 
-You can use the [editor on GitHub](https://github.com/juanluck/introduction-docker/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<a id='main'></a>
+# Introduction à Docker
+<sup><sub>(Basé sur le séminaire : https://ualmtorres.github.io/SeminarioDockerPresentacion/)</sub></sup>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[Docker](https://www.docker.com/) est [un projet open source créé en 2013](https://en.wikipedia.org/wiki/Docker_(software)) et a été une révolution pour le développement et le déploiement des opérations. Docker fait abstraction du matériel et du système d'exploitation de l'hôte en exécutant des applications dans des **conteneurs** : des compartiments isolés qui contiennent toutes les ressources d'une application ou d'un service.
 
-### Markdown
+Dans ce cours nous verrons comment utiliser Docker pour le développement d'applications simples ainsi que 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+apprendre à créer des services avec Docker Compose, clusters avec Docker Swarm et interagir à distance avec la machine Docker.
 
-# Header 1
-## Header 2
-### Header 3
+## Objectifs
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+Le but de ce premier TP est de commencer à se familiariser avec git. Plus précisément, nous allons apprendre: 
 
-[Link](url) and ![Image](src)
-```
+>1. Connaître les composants de base de Docker
+2. Créer des conteneurs à partir d'images Docker Hub
+3. Apprenez à utiliser Dockerfile pour la création d'images
+4. Utiliser Docker Compose pour créer des environnements de conteneurs
+5. Utiliser des volumes pour le stockage persistant
+6. Étudier Docker Swarm pour la mise à l'échelle des applications
+7. Créer des clusters avec Docker Machine
+8. Étudier des exemples d'environnements élastiques
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+[Haut de la page](#main)
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/juanluck/introduction-docker/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+---
