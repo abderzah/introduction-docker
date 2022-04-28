@@ -16,7 +16,7 @@ Vous trouverez ci-dessous un résumé de certaines commandes. Pour plus d'inform
 ```shell
 $ docker info
 $ docker version
-$ docker run <image> // on crée un conteneur à partir d'une image. Si nous n'avons pas l'image localement, elle est téléchargé automatiquement
+$ docker run <image> // on crée un conteneur à partir d une image. Si nous n'avons pas l'image localement, elle est téléchargé automatiquement
 $ docker run -d -p 82:80 nginx // Créer un conteneur en mode détaché accessible depuis le port 82
 $ docker stop|start <id> // Arrêter|Lancer un conteneur
 $ docker ps -a // Liste des conteneurs (-a affiche également les conteneurs arrêtés)
