@@ -30,7 +30,7 @@ $ docker cp <id>:<fichier> . // Cela copie le fichier <fichier> du conteneur dan
 ```
 
 <div id="tip">
-<p>Le résumé ci-dessus est pour référence. Pour le moment, vous n'avez pas besoin de comprendre la signification de ces commandes. Nous allons les travailler dans cette section.<p>
+<p>Le résumé ci-dessus est pour référence. Pour le moment, vous n'avez pas besoin de comprendre la signification de ces commandes. Nous allons les travailler dans cette section.</p>
 </div>
 
 ---
