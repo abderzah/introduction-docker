@@ -81,7 +81,7 @@ $ nano .ssh/authorized_keys
 - 4) Coller la clé publique sur ce fichier. **Attention**, il ne doit pas y avoir de ligne vide dans le fichier authorized_key.
 
 
-- 5) Dans un nouveau terminal de la machine, vérifier que la connection ssh est ok. Avec cette commande, on va  donc lister son HOME sur di-docker :
+- 5) Dans un nouveau terminal de la machine, vérifier que la connection ssh est ok. Avec cette commande, on va  donc lister votre HOME sur di-docker :
 ```shell
 $ ssh <votre-utilisateur-iut>@di-docker ls -la
 ```
