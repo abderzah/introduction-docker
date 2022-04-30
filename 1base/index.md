@@ -83,7 +83,7 @@ To generate this message, Docker took the following steps:
 	<p>
 	Cette image <code>hello-world</code> est conçue pour le premier contact avec Docker. Le 		résultat d'exécution est extrêmement simple : il affiche la phrase de 		
 	bienvenue <b>"Hello from Docker !"</b>. Cependant, l'affichage montre aussi d'autres
-	choses : Cette image est destinée à montrer les étapes suivis du lancement de la commande 		à l'affichage des résultats. 
+	choses : l'image <code> hello-world</code> est destinée à montrer les étapes suivis du lancement de la commande 		à l'affichage des résultats. 
 	</p>
 
 	<p>
@@ -98,19 +98,19 @@ To generate this message, Docker took the following steps:
 - Un **conteneur Docker** n'est finalement qu'une image en cours d'exécution. Une fois que vous avez créé un conteneur, il ajoute une couche inscriptible au-dessus de l'image immuable, ce qui signifie que vous pouvez maintenant le modifier.
 
  
-- Pour voir la **liste des conteneurs** actifs en cours d'exécution sur votre machine, tapez :
+- Pour voir la **liste des conteneurs** actifs en cours d'exécution sur votre machine (ou di-docker), tapez :
  
 ```
 $ docker ps
 ```
 
-- Pour voir **toutes les conteneurs**, actifs ou arrêtés, sur votre machine, tapez :
+- Pour voir **toutes les conteneurs**, actifs ou arrêtés, sur votre machine (ou di-docker), tapez :
 
 ```
 $ docker ps -a
 ```
 
-- Pour voir **toutes les images** que vous avez téléchargées sur votre machine, tapez :
+- Pour voir **toutes les images** que vous avez téléchargées sur votre machine (ou di-docker), tapez :
 
 ```
 $ docker images
@@ -118,20 +118,23 @@ $ docker images
 
 <div id="attention">
 	<p>
-	Les images Docker occupent une certaine quantité d'espace sur votre disque dur. Normalement, ce n'est pas un problème si vous travaillez sur votre machine personelle. En revanche, si vous faites les exercices sur les machines de l'IUT, nous risquons de dépasser le quota de stockage. Pour éviter cela, n'oubliez pas de supprimer les images avec les commandes suivantes après la fin de chaque exercice.
+	Les images Docker occupent une certaine quantité d'espace sur votre disque dur. Normalement, ce n'est pas un problème si vous travaillez sur votre machine personelle. Cependant, il est possible de les supprimer.
+	</p>
+	
+	<p style="font-size:22px"> <b>Attention !! Dans le cas où vous travaillez sur les machines de l'IUT, n'exécutez pas ces commandes : elles supprimeraient tous les conteneurs et les images de vos collègues ainsi que les vôtres.</b>
 	</p>
 
-	<h3>1. Arrêter tous les conteneurs en cours d'exécution</h3>
+	<b style="font-size:22px">1. Arrêter tous les conteneurs en cours d'exécution</b>
 	<p><code>
 		docker stop $(docker ps -qa)
 	</code></p>
 
-	<h3>2. Supprimer tous les conteneurs</h3>
+	<b style="font-size:22px">2. Supprimer tous les conteneurs</b>
 	<p><code>
 		docker rm $(docker ps -qa)
 	</code></p>
 
-	<h3>3. Suppression de toutes les images Docker</h3>
+	<b style="font-size:22px">3. Suppression de toutes les images Docker</b>
 	<p><code>
 		docker rmi $(docker images -q)
 	</code></p>
