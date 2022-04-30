@@ -53,8 +53,7 @@ L'utilisation d'un serveur partagé par tous ne posera pas de problème dans la 
 
 ## Instructions
 
-1. Vérifier sur votre machine à l'IUT si vous avez une clé publique :
-
+- 1) Vérifier sur votre machine à l'IUT si vous avez une clé publique :
 ```
 $ cat .ssh/id_rsa.pub
 ```
@@ -69,29 +68,25 @@ $ cat .ssh/id_rsa.pub
     - Afficher et **copier** la clé : ```$ cat .ssh/id_rsa.pub```
 
 
-2. On va sur le serveur di-docker :
-
+- 2) On va sur le serveur di-docker :
 ```shell
 ssh <votre-utilisateur-iut>@di-docker
 ```
 
-3. Sur di-docker, éditer le fichier :
-
+- 3) Sur di-docker, éditer le fichier :
 ```shell
 $ nano vi .ssh/authorized_keys
 ```
 
-4. Coller la clé publique sur ce fichier. **Attention**, il ne doit pas y avoir de ligne vide dans le fichier authorized_key.
+- 4) Coller la clé publique sur ce fichier. **Attention**, il ne doit pas y avoir de ligne vide dans le fichier authorized_key.
 
 
-5. Dans un nouveau terminal de la machine, vérifier que la connection ssh est ok. Avec cette commande, on va  donc lister son HOME sur di-docker :
-
+- 5) Dans un nouveau terminal de la machine, vérifier que la connection ssh est ok. Avec cette commande, on va  donc lister son HOME sur di-docker :
 ```shell
 $ ssh <votre-utilisateur-iut>@di-docker ls -la
 ```
 
-6. Normalement, vous avez déjà accès au serveur di-docker. À partir de la machine iut, tapez :
-
+- 6) Normalement, vous avez déjà accès au serveur di-docker. À partir de la machine iut, tapez :
 ```shell
 $ docker --version
 ```
