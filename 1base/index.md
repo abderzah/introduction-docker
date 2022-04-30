@@ -163,7 +163,7 @@ Vous avez déjà appris qu'un conteneur est lancé avec la commande ```docker ru
 $ docker run alpine ls
 ```
 
-Bien que cela nous permette d'interagir avec le conteneur dans une certaine mesure, en principe nous ne pouvons pas faire grand-chose avec ce changement de commandement. Si on veut vraiment interagir avec ce conteneur, il est préférable de passer en mode interactif. Ceci est réalisé avec l'option _-it_. 
+Bien que cela nous permette d'interagir avec le conteneur dans une certaine mesure, en principe nous ne pouvons pas faire grand-chose avec ce changement de commande. Si on veut vraiment interagir avec ce conteneur, il est préférable de passer en mode interactif. Ceci est réalisé avec l'option _-it_. 
 
 - Tapez :
 
@@ -191,7 +191,7 @@ $ docker exec -it <HACHAGE ou NOM DU CONTENEUR> /bin/sh
 
 - Cette commande ```docker exec``` nous permet d'interagir avec un conteneur déjà ouvert. Dans ce cas, nous avons lancé un terminal shell _/bin/sh_ en mode interactif _-it_. Ce mode d'interaction sera utile plus tard.
 
-- Finalement, quitter les conteneurs avec la commande _exit_
+- Finalement, quitter le conteneur avec la commande _exit_
 
 
 
