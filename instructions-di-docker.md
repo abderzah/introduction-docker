@@ -7,7 +7,7 @@
 <div id="tip">
 <p>
 Les machines à l'IUT n'ont pas de version de docker installée. Docker à l'IUT est situé sur un serveur appelé <b>di-docker</b>. Ce mini-tuto vous explique comment configurer votre machine à l'IUT pour qu'elle ait accès au serveur di-docker et que vous puissiez l'utiliser en toute transparence depuis votre poste de travail local.
-<p>
+</p>
 
 <p>
 L'utilisation d'un serveur partagé par tous ne posera pas de problème dans la plupart des exercices. Cependant, nous devons être attentifs aux points suivants :
@@ -19,7 +19,23 @@ L'utilisation d'un serveur partagé par tous ne posera pas de problème dans la 
 	</ul>
 
 	<li> <b style="font-size:22px">Utilisation des ports :</b></li>
-
+	<ul>
+		<li>Comme tous les utilisateurs vont partager le même serveur, le plus gros problème qui peut survenir est que deux utilisateurs essaient d'utiliser le même port pour une application.</li>
+		<li>Pour éviter ce conflit, nous allons l'éviter en attribuant un numéro de port unique à chaque utilisateur en suivant la méthode suivante :</li>
+		<ul>
+			<li>Obtenez le code de hachage de votre nom. Par exemple, disons que je m'appelle John Smith :
+			<code>
+				$ echo "John Smith" | shasum <br/>
+				8d0ed1ffa6ba0f6e6cbb74534b4785a916d73ec0
+			</code>
+			</li>
+			<li> Enregistrez les quatre derniers chiffres, c'est-à-dire <code>3ec0</code></li>
+			<li> Traduisez ce code à quatre chiffres de l'hexadécimal au décimal. Par exemple, vous pouvez utiliser ce convertisseur hexadécimal <a href="https://www.rapidtables.com/convert/number/hex-to-decimal.html">convertisseur hexadécimal</a></li>
+			<li><b>3ec0</b> en hexadécimal est égal à <b>16064</b>.</li>
+			<li>Le numéro de port pour l'utilisateur <em>John Smith</em> sera désormais <b>16064</b>.</li>
+			<li>Si <em>John Smith</em> a besoin de plus de ports, nous utiliserons des valeurs corrélatives : <b>16065</b>, <b>16066</b>,<b>...</b></li>
+		</ul>
+	</ul>
 
 </ul>
 
