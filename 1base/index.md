@@ -194,10 +194,30 @@ $ docker exec -it <HACHAGE ou NOM DU CONTENEUR> /bin/sh
 - Finalement, quitter le conteneur avec la commande _exit_
 
 
+[Haut de la page](#main)
+
+---
+
+
+### 3.2. Copier des données de l'hôte vers l'invité
+
+
+
 
 [Haut de la page](#main)
 
 ---
+
+
+### 3.3. Création de volumes
+
+
+
+
+[Haut de la page](#main)
+
+---
+
 
 
 <style type="text/css" media="screen">
