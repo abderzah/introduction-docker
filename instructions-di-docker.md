@@ -75,7 +75,7 @@ ssh <votre-utilisateur-iut>@di-docker
 
 - 3) Sur di-docker, éditer le fichier :
 ```shell
-$ nano vi .ssh/authorized_keys
+$ nano .ssh/authorized_keys
 ```
 
 - 4) Coller la clé publique sur ce fichier. **Attention**, il ne doit pas y avoir de ligne vide dans le fichier authorized_key.
