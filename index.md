@@ -62,7 +62,7 @@ Dans ce cours nous verrons comment utiliser Docker pour le développement d'appl
 ---
 
 
-<div id="attention">
+<!--<div id="attention">
 	<p>
 	Les images Docker occupent une certaine quantité d'espace sur votre disque dur. Normalement, ce n'est pas un problème si vous travaillez sur votre machine personelle. En revanche, si vous faites les exercices sur les machines de l'IUT, nous risquons de dépasser le quota de stockage. Pour éviter cela, n'oubliez pas de supprimer les images avec les commandes suivantes après la fin de chaque exercice.
 	</p>
@@ -87,6 +87,7 @@ Dans ce cours nous verrons comment utiliser Docker pour le développement d'appl
 
 
 ---
+-->
 
 <style type="text/css" media="screen">
    #tip {
