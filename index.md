@@ -31,6 +31,20 @@ Dans ce cours nous verrons comment utiliser Docker pour le développement d'appl
 
 ---
 
+## Installation
+
+- Pour installer docker sur votre machine personnelle suivez les instructions :
+    - [Guide d'installation de docker sur plussieurs plate-formes](https://docs.docker.com/get-docker/)
+- Pour configurer docker sur votre machine de l'IUT suivez les instructions :
+    -  [Guide de Configuration Docker sur les machines de l'IUT](instructions-di-docker.md)
+
+
+[Haut de la page](#main)
+
+
+---
+
+
 ## Ressources
 
 - [Docker cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/)
