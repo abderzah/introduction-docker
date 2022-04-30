@@ -1,7 +1,7 @@
 <a id='main'></a>
 # Configuration Docker sur les machines de l'IUT
 
-[Retour à la page principale](../index.md)
+[Retour à la page principale](./index.md)
 
 ## À prendre en compte
 <div id="tip">
