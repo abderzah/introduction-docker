@@ -22,9 +22,6 @@ Dans ce cours nous verrons comment utiliser Docker pour le développement d'appl
 3. Apprenez à utiliser Dockerfile pour la création d'images
 4. Utiliser Docker Compose pour créer des environnements de conteneurs
 5. Utiliser des volumes pour le stockage persistant
-6. Étudier Docker Swarm pour la mise à l'échelle des applications
-7. Créer des clusters avec Docker Machine
-8. Étudier des exemples d'environnements élastiques
 
 [Haut de la page](#main)
 

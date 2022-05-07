@@ -199,7 +199,7 @@ $ docker exec -it <HACHAGE ou NOM DU CONTENEUR> /bin/sh
 ---
 
 
-### 3.2. Copier des données de l'hôte vers l'invité
+### 3.2. Copier des données de l'hôte vers le conteneur
 
 
 
