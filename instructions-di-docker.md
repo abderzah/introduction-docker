@@ -6,7 +6,7 @@
 ## À prendre en compte
 <div id="tip">
 <p>
-Les machines à l'IUT n'ont pas de version de docker installée. Docker à l'IUT est situé sur un serveur appelé <b>di-docker</b>. Ce mini-tuto vous explique comment configurer votre machine à l'IUT pour qu'elle ait accès au serveur di-docker et que vous puissiez l'utiliser en toute transparence depuis votre poste de travail local.
+Les machines de l'IUT n'ont que le client docker d'installé. Docker à l'IUT est situé sur un serveur appelé <b>di-docker</b>. Ce mini-tuto vous explique comment configurer votre machine à l'IUT pour qu'elle ait accès au serveur di-docker et que vous puissiez l'utiliser en toute transparence depuis votre poste de travail local.
 </p>
 
 <p>
@@ -15,7 +15,7 @@ L'utilisation d'un serveur partagé par tous ne posera pas de problème dans la 
 <ul>
 	<li> <b style="font-size:22px">Serveur par défaut :</b></li>
 	<ul>
-		<li>Si vous travaillez sur une machine personnelle, votre serveur par défaut sera <b>localhost</b>. Cependant, sur une machine de l'IUT, le nom du serveur sera <b>di-docker</b> (par exemple, lorsque vous le saisissez dans un navigateur).</li>
+		<li>Si vous travaillez sur une machine personnelle, votre serveur par défaut sera <b>localhost</b>. Cependant, sur une machine de l'IUT, le nom du serveur docker sera <b>di-docker</b> (par exemple, lorsque vous le saisissez dans un navigateur).</li>
 	</ul>
 
 	<li> <b style="font-size:22px">Utilisation des ports :</b></li>
@@ -53,25 +53,22 @@ L'utilisation d'un serveur partagé par tous ne posera pas de problème dans la 
 
 ## Instructions
 
-- 1) Vérifier sur votre machine à l'IUT si vous avez une clé publique :
-```
-$ cat .ssh/id_rsa.pub
-```
-
-- **Si la clé existe :** copier la clé.
-- **Si elle n'existe pas :**
-    - Générez la clé avec : 
-    ```shell
-    $ ssh-keygen
+- 1) Création de clés SSH ecdsa :
+    - Sur votre machine de l'IUT, générez la clé ecdsa avec :
+    ```
+    $ ssh-keygen -t ecdsa
     ```
     - Repondre à tout avec un retour chariot -> passphrase vide.
-    - Afficher et **copier** la clé : ```$ cat .ssh/id_rsa.pub```
-
+    - Afficher et **copier** la clé : 
+    ```
+    $ cat .ssh/id_ecdsa.pub
+    ```
 
 - 2) On va sur le serveur di-docker :
 ```shell
-ssh <votre-utilisateur-iut>@di-docker
+ssh di-docker
 ```
+    - mkdir -m 700 .ssh
 
 - 3) Sur di-docker, éditer le fichier :
 ```shell
@@ -79,12 +76,23 @@ $ nano .ssh/authorized_keys
 ```
 
 - 4) Coller la clé publique sur ce fichier. **Attention**, il ne doit pas y avoir de ligne vide dans le fichier authorized_key.
+   - Utiliser le COPIER [SHIFT CTRL C ] / COLLER [SHIFT CTRL V] du terminal
+   - CTRL X (pour sortir de nano)
+   - Repondre O pour oui (pour sauver)
+   - Recommencer et verifier qu'il n'y a pas une ligne vide. Le curseur de la souris dans nano doit arriver a la fin de la 1ere ligne.
+   - S'il y a une ligne vide, appuyer sur la touche effacer-arrière(<----) jusqu'a ce que le curseur de la souris soit sur la fin de la 1er ligne, puis CTRL X pour sortir et O pour sauver.
 
 
 - 5) Dans un nouveau terminal de la machine, vérifier que la connection ssh est ok. Avec cette commande, on va  donc lister votre HOME sur di-docker :
 ```shell
-$ ssh <votre-utilisateur-iut>@di-docker ls -la
+$ ssh di-docker ls -la
 ```
+    - Il faudra, au préalable accepter d'enregistrer di-docker comme étant connu dans le fichier .ssh/known_hosts en répondant yes.
+    ```
+    The authenticity of host 'di-docker (172.16.96.124)' can't be established.
+    ECDSA key fingerprint is SHA256:6OBIZxqDUkSnXz6A1ueVNaUHeolwFliGkmF4qX1hA.
+    Are you sure you want to continue connecting (yes/no)?
+    ```
 
 - 6) Normalement, vous avez déjà accès au serveur di-docker. À partir de la machine iut, tapez :
 ```shell
