@@ -68,7 +68,10 @@ L'utilisation d'un serveur partagé par tous ne posera pas de problème dans la 
 ```shell
 ssh di-docker
 ```
-    - mkdir -m 700 .ssh
+    - Ensuite, tapez :
+    ```
+    mkdir -m 700 .ssh
+    ```
 
 - 3) Sur di-docker, éditer le fichier :
 ```shell
