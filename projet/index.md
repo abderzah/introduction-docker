@@ -7,7 +7,7 @@
 
 - Ce projet consiste à proposer l'installation d'un service réseau à l'aide de docker. Avant de commencer le projet, l'étudiant doit suivre le cours d'[introduction à docker](https://juanluck.github.io/introduction-docker/) qui, associé aux ressources Web proposées dans la SAE, expliquera les concepts nécessaires à la réalisation du projet.
 
-- Le projet à réaliser est au choix de chaque équipe, mais il doit être lié à l'installation des services réseaux. Dans le cours, un projet est proposé à titre d'exemple ([sur ce lien](https://github.com/juanluck/lampDocker)).
+- Le projet à réaliser est au choix de chaque équipe, mais il doit être lié à l'installation des services réseaux. Dans le cours, un projet est proposé à titre d'exemple ([sur ce lien](https://github.com/juanluck/exempleDockerfile/)).
 
 - En guise d'aide, nous proposons ci-dessous une série de sujets (avec un niveau de complexité différent) qui peuvent être abordés dans le projet.  Cela ne vous empêche pas de choisir un sujet différent :
     - [Service LDAP](https://fr.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol)
