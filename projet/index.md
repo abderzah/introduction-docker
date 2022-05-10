@@ -36,7 +36,7 @@
 - Ce référentiel ```docker-sae203``` nous servira à la fois pour stocker notre projet ainsi que le site web :
     - Dans la branche principale, nous aurons le projet docker qui devrait au moins contenir deux fichiers (peut être plus) :
         - Dockerfile
-        - README.md : Avec les instructions d'installation. Voir [ce site comme exemple](https://github.com/juanluck/lampDocker)
+        - README.md : Avec les instructions d'installation. Voir [ce site comme exemple](https://github.com/juanluck/exempleDockerfile/)
     - Dans la branche ```gh-pages```, nous allons héberger le site web du projet. Vous pouvez voir [le tp5 de l'introduction à git](https://juanluck.github.io/Introduction-GIT/tp5/) comme guide.
 
 - Le site web sera à la fois le compte-rendu du projet ainsi que le support de la présentation de votre soutenance.
