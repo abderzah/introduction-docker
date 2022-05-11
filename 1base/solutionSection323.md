@@ -1,4 +1,5 @@
 
 # Solution exercice section 3.2.3
-[Retour à la section](./index.md#section323)
+<a href="/introduction-docker/1base/index.html#section323">Retour à la section</a>
+
 
