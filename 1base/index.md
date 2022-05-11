@@ -238,10 +238,9 @@ Un conteneur est un processus isolé. Cela signifie que ce qui se passe dans l'e
 &lt;/html&gt; <br/>
 </code>
 </ul>
-<center>
-<b><a href="./solutionSection323.md">Afficher la solution!!</a></b>
-</center>
 </div>
+
+[**Afficher la solution à l'exercice!!**](./solutionSection323.md)
 
 [Haut de la page](#main)
 
