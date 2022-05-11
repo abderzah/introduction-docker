@@ -238,10 +238,12 @@ Un conteneur est un processus isolé. Cela signifie que ce qui se passe dans l'e
    &lt;/body&gt; 
 &lt;/html&gt; 
 </textarea>
+
+<a href="/introduction-docker/1base/solutionSection323.html"><strong>Afficher la solution à l’exercice!!</strong></a>
+
 </center>
 </div>
 
-[**Afficher la solution à l'exercice!!**](./solutionSection323.md)
 
 [Haut de la page](#main)
 
