@@ -30,7 +30,7 @@ $ docker cp <id>:<fichier> . // Cela copie le fichier <fichier> du conteneur dan
 ```
 
 <div id="tip">
-<p>Le résumé ci-dessus est pour référence. Pour le moment, vous n'avez pas besoin de comprendre la signification de ces commandes. Nous allons les travailler dans cette section.</p>
+<p>Le résumé ci-dessus est pour référence. Pour le moment, vous n'avez pas besoin de comprendre la signification de ces commandes. Nous allons les travailler dans ce tutoriel.</p>
 </div>
 
 ---
@@ -150,9 +150,13 @@ $ docker images
 
 ---
 
-## 3. Interactions avec docker, copie de données et création de volume
+## 3. Interactions avec les conteneurs docker
 
-Pour apprendre de nouvelles notions de docker dans cette section, nous allons utiliser l'image ```alpine``` : une version allégée de linux qui occupe à peine quelques mégaoctets de stockage.
+Pour apprendre de nouvelles notions de docker dans cette section, nous allons utiliser l'image ```alpine``` et puis l'image ```httpd```. La première image (```alpine```) est  une version allégée de linux qui occupe à peine quelques mégaoctets de stockage. La deuxième image (```httpd```) est une image linux avec un serveur apache déjà configuré et prêt à être utilisé . Vous pouvez trouver [l'image d'alpine](https://hub.docker.com/_/alpine) et [l'image httpd](https://hub.docker.com/_/httpd) sur [hub.docker.com](https://hub.docker.com).
+
+<div id="tip">
+Lorsque nous exécutons la commande <code>docker run &lt;image&gt;</code>,  un conteneur sera créé à partir de celle-ci si l'image est sur notre machine. Cependant, si nous n'avons pas l'image sur notre machine, la commande  recherchera l'image sur docker hub et la téléchargera. Ce téléchargement, qui se fait automatiquement, peut aussi se faire manuellement avec <code> docker pull &lt;image&gt;</code>
+</div>
 
 ### 3.1. Conteneur en mode interactif
 
@@ -199,25 +203,49 @@ $ docker exec -it <HACHAGE ou NOM DU CONTENEUR> /bin/sh
 ---
 
 
-### 3.2. Copier des données de l'hôte vers le conteneur
+### 3.2. Ports, volumes et copie de fichiers
+
+Un conteneur est un processus isolé. Cela signifie que ce qui se passe dans l'environnement virtuel du conteneur n'est pas accessible depuis la machine hôte. En soi un conteneur n'aurait pas beaucoup d'intérêt s'il est complètement isolé. Ainsi, il est possible d'exposer certaines parties du conteneur à la machine hôte. Dans cette section, nous verrons comment exposer des ports, comment copier des fichiers de la machine hôte vers le conteneur et comment partager des volumes (répertoires) entre la machine hôte et le conteneur. Pour cela nous utiliserons l'image ```httpd``` qui fournie le service **HTTP apache**.
+
+#### 3.2.1. Ports
+
+- Ouvrez un navigateur Web et entrez ```<machine>:<port>``` où ```<port>``` fait référence au port désigné pour l'hôte et ```<machine>``` fait référence à la machine sur laquelle vous exécutez le conteneur : ```localhost``` si vous êtes sur votre machine personelle et ```di-docker``` si vous êtes sur une machine de l'IUT. Si vous avez suivi les étapes correctement, votre navigateur devrait afficher la page Web suivante :
+
+![It works](./images/itWorks.png)
+
+<b>Félicitations : vous venez d'installer votre premier service réseau avec docker !!</b>
 
 
+#### 3.2.2. Volumes
 
+<a id='section323'></a>
+#### 3.2.3. Copier des fichiers dans un conteneur en cours d'exécution
+
+
+<div id="homework">
+<ul>
+<li>Lancez un conteneur <code>httpd</code> que vous nommerez <b>httpd-&lt;votre nom&gt;</b> (c.a.d. ajoutez l'option <code>--name httpd-&lt;votre nom&gt; </code> à la commande <code>docker run</code>). N'oubliez pas de mapper le port 80 du conteneur vers un port de l'hôte.</li>
+
+<li>Entrez le nom et le port de la machine (e.g. <code>localhost:8080</code>) dans le navigateur et vérifiez que cela fonctionne (le navigateur affiche : <b>It works!</b>).</li>
+
+<li>Nous pouvons convenir qu'un service Web qui affiche simplement une triste page Web avec <b>"It works!"</b> n'est pas très encourageant. Cet exercice consiste à modifier, avec le conteneur en cours d'exécution, la page index.html avec un fichier de notre choix. Par exemple :</li>
+
+<code>
+&lt;html&gt; <br/>
+&lt;body&gt; <br/>
+&lt;h1&gt; adsf &lt;/h1&gt;<br/>
+&lt;/body&gt; <br/>
+&lt;/html&gt; <br/>
+</code>
+</ul>
+<center>
+<b><a href="./solutionSection323.md">Afficher la solution!!</a></b>
+</center>
+</div>
 
 [Haut de la page](#main)
 
 ---
-
-
-### 3.3. Création de volumes
-
-
-
-
-[Haut de la page](#main)
-
----
-
 
 
 <style type="text/css" media="screen">
