@@ -230,12 +230,14 @@ Un conteneur est un processus isolé. Cela signifie que ce qui se passe dans l'e
 
 <li>Nous pouvons convenir qu'un service Web qui affiche simplement une triste page Web avec <b>"It works!"</b> n'est pas très encourageant. Cet exercice consiste à modifier, avec le conteneur en cours d'exécution, la page index.html avec un fichier de notre choix. Par exemple :</li>
 
-<code>
-&lt;html&gt; <br/>
-&lt;body&gt; <br/>
-&lt;h1&gt; adsf &lt;/h1&gt;<br/>
-&lt;/body&gt; <br/>
-&lt;/html&gt; <br/>
+
+<textarea rows="5" cols="60" name="text" placeholder="Enter text">
+&lt;html&gt; 
+   &lt;body&gt; 
+       &lt;h1&gt; index.html modifié &lt;/h1&gt;
+   &lt;/body&gt; 
+&lt;/html&gt; 
+</textarea>
 </code>
 </ul>
 </div>
