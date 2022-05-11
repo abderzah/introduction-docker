@@ -238,11 +238,13 @@ Un conteneur est un processus isolé. Cela signifie que ce qui se passe dans l'e
    &lt;/body&gt; 
 &lt;/html&gt; 
 </textarea><br />
+</center>
 
 <ul>
 <li> Trouvez la procédure pour copier ce fichier index.html de votre ordinateur hôte vers le conteneur, afin que le navigateur affiche le fichier index.html et non le message <b>It works!</b>. Faites-le avec le conteneur en cours d'exécution.</li>
 </ul>
 
+<center>
 <a href="/introduction-docker/1base/solutionSection323.html"><strong>Afficher la solution à l’exercice!!</strong></a>
 
 </center>
