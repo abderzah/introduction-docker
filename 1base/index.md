@@ -229,17 +229,16 @@ Un conteneur est un processus isolé. Cela signifie que ce qui se passe dans l'e
 <li>Entrez le nom et le port de la machine (e.g. <code>localhost:8080</code>) dans le navigateur et vérifiez que cela fonctionne (le navigateur affiche : <b>It works!</b>).</li>
 
 <li>Nous pouvons convenir qu'un service Web qui affiche simplement une triste page Web avec <b>"It works!"</b> n'est pas très encourageant. Cet exercice consiste à modifier, avec le conteneur en cours d'exécution, la page index.html avec un fichier de notre choix. Par exemple :</li>
-
-
-<textarea rows="5" cols="60" name="text" placeholder="Enter text">
+</ul>
+<center>
+<textarea rows="6" cols="36" name="text" placeholder="Enter text">
 &lt;html&gt; 
    &lt;body&gt; 
        &lt;h1&gt; index.html modifié &lt;/h1&gt;
    &lt;/body&gt; 
 &lt;/html&gt; 
 </textarea>
-</code>
-</ul>
+</center>
 </div>
 
 [**Afficher la solution à l'exercice!!**](./solutionSection323.md)
