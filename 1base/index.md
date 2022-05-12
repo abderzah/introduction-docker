@@ -244,10 +244,10 @@ docker run --name httpd-<votre nom> -d -p <port hôte>:80 httpd
     style="display: block; 
            margin-left: auto;
            margin-right: auto;
-           width: 30%;"
+           width: 80%;"
     src="./images/itWorks.png" 
-    alt="It works!">
-</img>
+    alt="It works!" />
+
 
 
 <center>
