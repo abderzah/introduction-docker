@@ -221,33 +221,43 @@ Un conteneur est un processus isolé. Cela signifie que ce qui se passe dans l'e
 <a id='section323'></a>
 #### 3.2.3. Copier des fichiers dans un conteneur en cours d'exécution
 
+La commande ```docker cp``` copie le contenu d'un dossier ou fichier source vers un dossier de destination. Vous pouvez copier du système de fichiers du conteneur vers la machine hôte ou inversement, du système de fichiers hôte vers le conteneur. Vous pouvez trouver la syntaxe complète de la commande dans [ce lien](https://docs.docker.com/engine/reference/commandline/cp/).
+
+
 
 <div id="homework">
+<center><b>Exercice de découverte</b></center>
 <ul>
-<li>Lancez un conteneur <code>httpd</code> que vous nommerez <b>httpd-&lt;votre nom&gt;</b> (c.a.d. ajoutez l'option <code>--name httpd-&lt;votre nom&gt; </code> à la commande <code>docker run</code>). N'oubliez pas de mapper le port 80 du conteneur vers un port de l'hôte.</li>
+<li>Lancez un conteneur <code>httpd</code> que vous nommerez <b>httpd-&lt;votre nom&gt;</b> (c.a.d. ajoutez l'option <code>--name httpd-&lt;votre nom&gt; </code> à la commande <code>docker run</code>). N'oubliez pas de mapper le port 80 du conteneur vers un port de l'hôte. Exécutez le conteneur en arrière-plan (avec l'option <code>-d</code>).</li>
 
-<li>Entrez le nom et le port de la machine (e.g. <code>localhost:8080</code>) dans le navigateur et vérifiez que cela fonctionne (le navigateur affiche : <b>It works!</b>).</li>
+<li>Entrez le nom et le port de la machine dans le navigateur web (e.g. <code>localhost:8080</code>) et vérifiez que cela fonctionne (le navigateur affiche : <b>It works!</b>).</li>
 
-<li>Nous pouvons convenir qu'un service Web qui affiche simplement une triste page Web avec <b>"It works!"</b> n'est pas très encourageant. Cet exercice consiste à modifier, avec le conteneur en cours d'exécution, la page index.html avec un fichier de notre choix. Par exemple :</li>
+<li>Nous pouvons convenir qu'un service Web qui affiche simplement une triste page Web avec <b>"It works!"</b> n'est pas très encourageant. Cet exercice consiste à modifier, avec le conteneur en cours d'exécution, la page index.html avec un fichier de notre choix. Par exemple, supposons un fichier index.html avec ce contenu :</li>
 </ul>
 <center>
 <textarea rows="6" cols="36" name="text" placeholder="Enter text">
 &lt;html&gt; 
+   &lt;head&gt; 
+	&lt;meta charset="UTF-8"&gt; 
+   &lt;/head&gt; 	
    &lt;body&gt; 
-       &lt;h1&gt; index.html modifié &lt;/h1&gt;
+       &lt;h1&gt; Le fichier index.html a été modifié &lt;/h1&gt;
    &lt;/body&gt; 
 &lt;/html&gt; 
 </textarea><br />
 </center>
 
 <ul>
-<li> Trouvez la procédure pour copier ce fichier index.html de votre ordinateur hôte vers le conteneur, afin que le navigateur affiche le fichier index.html et non le message <b>It works!</b>. Faites-le avec le conteneur en cours d'exécution.</li>
+<li> Trouvez la procédure pour copier ce fichier index.html de votre machine hôte vers le conteneur, afin que le navigateur affiche le fichier index.html et non le message <b>It works!</b>. Faites-le avec le conteneur en cours d'exécution.</li>
 </ul>
 
 <center>
 <a href="/introduction-docker/1base/solutionSection323.html"><strong>Afficher la solution à l’exercice!!</strong></a>
-
 </center>
+
+<ul>
+<li> A la fin, stopper le conteneur avec la commande <code>docker stop &lt;nom du conteneur&gt;</code> </li>
+</ul>
 </div>
 
 
