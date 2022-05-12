@@ -179,7 +179,7 @@ $ docker run -it alpine
 ```shell
 cat /etc/os-release
 ```
-- Sans quitter le conteneur, ouvrez une autre console dans votre système d'exploitation. Nous allons maintenant montrer comment vous pouvez continuer à interagir avec le conteneur depuis autre terminal. Dans la nouvelle console, afficher tous les conteneurs actifs :
+- Sans quitter le conteneur, ouvrez une autre console dans votre système d'exploitation. Nous allons maintenant montrer comment vous pouvez continuer à interagir avec le conteneur depuis autre terminal. Dans la nouvelle console, afficher tous les conteneurs actifs avec ```docker ps``` :
 
 ```shell
 $ docker ps 
