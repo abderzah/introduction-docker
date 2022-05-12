@@ -241,7 +241,9 @@ docker run --name httpd-<votre nom> -d -p <port hôte>:80 httpd
 
 <center>
 ![It works](./images/itWorks.png)
+</center>
 
+<center>
 <b style="color:red;font-size:18px;">Félicitations : vous venez d'installer votre premier service réseau avec docker !!</b>
 </center>
 
