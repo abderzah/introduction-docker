@@ -209,11 +209,41 @@ Un conteneur est un processus isolé. Cela signifie que ce qui se passe dans l'e
 
 #### 3.2.1. Ports
 
+La première chose que nous allons apprendre est comment exposer le port 80 d'un conteneur ```httpd```. Comme vous le savez, le port 80 est le port par défaut du protocole HTTP. Le serveur apache que nous allons lancer avec un conteneur ```httpd``` agit sur ce port, cependant, ledit port sera isolé dans le conteneur. Faisons le test :
+
+- Lancez la commande suivante :
+```
+docker run httpd
+```
+
+- Ouvrez ensuite un navigateur et dans la barre de navigation tapez ```localhost``` (soit ```di-docker``` si vous êtes sur une machine de l'IUT).
+
+- Vous pouvez vérifier qu'il n'y a pas de service http même si le conteneur est en cours d'exécution.
+
+- Tapez CTRL-C pour arrêter le conteneur.
+
+Ce dont nous avons besoin pour rendre ce service accessible, c'est de mapper le port 80 sur le conteneur à un port donné sur la machine hôte. **Si vous êtes dans une machine de l'IUT, n'oubliez pas de voir [ce petit tuto](https://juanluck.github.io/introduction-docker/instructions-di-docker.html) pour connaitre le port que vous allez utiliser.** Passons maintenant au lancement d'un service accessible :
+
+- Exécutez l'instruction suivante _**(avant de l'exécuter lire la signification des paramètres)**_ :
+```
+docker run --name httpd-<votre nom> -d -p <port hôte>:80 httpd
+```
+
+- Voyons la signification des différents paramètres : 
+    - ```--name httpd-<votre nom>``` : ce paramètre vous permet de nommer le conteneur avec le nom de votre choix. Assez utile pour le localiser ultérieurement, surtout si vous travaillez sur une machine à l'IUT. Remplacez ```<votre nom>``` par, imaginez quoi... votre nom !
+    - ```-d``` : ce paramètre permet d'exécuter le conteneur en arrière-plan (_dettached_).
+    - ```-p <port hôte>:80``` : Avec ce paramètre, nous permettons de mapper un port de l'hôte avec un port du conteneur.
+         - À gauche des deux-points ```:```, nous indiquons le port qui sera exposé sur l'hôte. Si vous travaillez avec votre machine personnelle, ce port peut être par exemple le 8080. Si vous travaillez sur une machine de l'IUT, deux personnes ne peuvent pas utiliser le même port. Pour éviter les conflits et garantir que chaque étudiant à l'IUT dispose d'un port différent, suivez [ce tutoriel.](https://juanluck.github.io/introduction-docker/instructions-di-docker.html)
+        - À droite des deux-points ```:```, Nous indiquons le port du conteneur qui sera exposé. Dans le cas du protocole http, ce port sera 80.
+    - ```httpd``` : enfin, nous indiquons l'image que nous voulons lancer.
+
 - Ouvrez un navigateur Web et entrez ```<machine>:<port>``` où ```<port>``` fait référence au port désigné pour l'hôte et ```<machine>``` fait référence à la machine sur laquelle vous exécutez le conteneur : ```localhost``` si vous êtes sur votre machine personelle et ```di-docker``` si vous êtes sur une machine de l'IUT. Si vous avez suivi les étapes correctement, votre navigateur devrait afficher la page Web suivante :
 
 ![It works](./images/itWorks.png)
 
-<b>Félicitations : vous venez d'installer votre premier service réseau avec docker !!</b>
+<center>
+<b style="color:red;font-size:18px;">Félicitations : vous venez d'installer votre premier service réseau avec docker !!</b>
+</center>
 
 [Haut de la page](#main)
 
@@ -233,7 +263,7 @@ La commande ```docker cp``` copie le contenu d'un dossier ou fichier source vers
 
 <li>Entrez le nom et le port de la machine dans le navigateur web (e.g. <code>localhost:8080</code>) et vérifiez que cela fonctionne (le navigateur affiche : <b>It works!</b>).</li>
 
-<li>Nous pouvons convenir qu'un service Web qui affiche simplement une triste page Web avec <b>"It works!"</b> n'est pas très encourageant. Cet exercice consiste à modifier, avec le conteneur en cours d'exécution, la page index.html avec un fichier de notre choix. Par exemple, supposons un fichier index.html avec ce contenu :</li>
+<li>Nous pouvons convenir qu'un service Web qui affiche simplement une triste page Web avec <b>"It works!"</b> n'est pas très encourageant. Cet exercice consiste à modifier, avec le conteneur en cours d'exécution, la page index.html avec un contenu de notre choix. Par exemple, supposons un fichier index.html avec ce contenu :</li>
 </ul>
 <center>
 <textarea rows="6" cols="36" name="text" placeholder="Enter text">
@@ -253,8 +283,8 @@ La commande ```docker cp``` copie le contenu d'un dossier ou fichier source vers
 </ul>
 
 <center>
-<a href="/introduction-docker/1base/solutionSection322.html"><strong>Afficher la solution à l’exercice!!</strong></a>
-</center>
+<a href="/introduction-docker/1base/solutionSection322.html"><strong> Cliquez ici pour afficher la solution à l’exercice!!</strong></a>
+</center><br/ >
 
 <ul>
 <li> A la fin, stopper le conteneur avec la commande <code>docker stop &lt;nom du conteneur&gt;</code> </li>
