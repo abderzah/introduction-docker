@@ -259,7 +259,7 @@ La commande ```docker cp``` copie le contenu d'un dossier ou fichier source vers
 <div id="homework">
 <center><b>Exercice de découverte</b></center>
 <ul>
-<li>Lancez un conteneur <code>httpd</code> que vous nommerez <b>httpd-&lt;votre nom&gt;</b> (c.a.d. ajoutez l'option <code>--name httpd-&lt;votre nom&gt; </code> à la commande <code>docker run</code>). N'oubliez pas de mapper le port 80 du conteneur vers un port de l'hôte. Exécutez le conteneur en arrière-plan (avec l'option <code>-d</code>).</li>
+<li>Lancez un conteneur <code>httpd</code> que vous nommerez <b>httpd-&lt;votre nom&gt;</b> (c.a.d. ajoutez l'option <code>--name httpd-&lt;votre nom&gt; </code> à la commande <code>docker run</code>). N'oubliez pas de mapper le port 80 du conteneur vers un port de l'hôte. Exécutez le conteneur en arrière-plan (avec l'option <code>-d</code>). Si vous n'avez pas arrêté le conteneur de la section précédente, utilisez-le au lieu d'en lancer un nouveau.</li>
 
 <li>Entrez le nom et le port de la machine dans le navigateur web (e.g. <code>localhost:8080</code>) et vérifiez que cela fonctionne (le navigateur affiche : <b>It works!</b>).</li>
 
@@ -279,7 +279,7 @@ La commande ```docker cp``` copie le contenu d'un dossier ou fichier source vers
 </center>
 
 <ul>
-<li> Trouvez la procédure pour copier ce fichier index.html de votre machine hôte vers le conteneur, afin que le navigateur affiche le fichier index.html et non le message <b>It works!</b>. Faites-le avec le conteneur en cours d'exécution.</li>
+<li> Trouvez la procédure pour copier ce fichier index.html de votre machine hôte vers le conteneur, afin que le navigateur affiche le nouveau contenu et pas le message <b>It works!</b>. Faites-le avec le conteneur en cours d'exécution.</li>
 </ul>
 
 <center>
