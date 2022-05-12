@@ -6,7 +6,7 @@
 
 - La première équipe à faire un [```pull-request```](https://juanluck.github.io/Introduction-GIT/tp4/#pullrequest) sur ce fichier ```solutionSection322.md``` avec la bonne réponse pour résoudre l'exercice recevra ce point bonus.
 
-- **Attention !! :** les modifications proposées du ```pull-request``` se feront uniquement sur ce fichier ```solutionSection322.md```
+- **Attention !! :** les modifications proposées du ```pull-request``` se feront uniquement sur ce fichier ```solutionSection322.md``` et sur la branche ```gh-pages```. [Voici le dépôt github](https://github.com/juanluck/introduction-docker).
 
 - **Pistes :**
 Sans arrêter le conteneur : pour explorer l'arborescence du conteneur, nous pouvons utiliser la commande suivante :

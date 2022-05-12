@@ -215,6 +215,10 @@ Un conteneur est un processus isolé. Cela signifie que ce qui se passe dans l'e
 
 <b>Félicitations : vous venez d'installer votre premier service réseau avec docker !!</b>
 
+[Haut de la page](#main)
+
+---
+
 <a id='section322'></a>
 #### 3.2.2. Copier des fichiers dans un conteneur en cours d'exécution
 
@@ -257,8 +261,53 @@ La commande ```docker cp``` copie le contenu d'un dossier ou fichier source vers
 </ul>
 </div>
 
+[Haut de la page](#main)
+
+---
 
 #### 3.2.2. Volumes
+
+La copie de fichiers ou de dossiers entre la machine hôte et le conteneur vu dans la section précédente est une solution qui permet l'échange d'informations. Cependant, ce n'est pas le seul : les volumes permettent d'établir un point de montage entre les deux machines, afin qu'un répertoire puisse être partagé à tout moment.
+
+**Dans cette section, nous allons apprendre à créer des volumes entre les deux machines en utilisant l'image ```httpd```.**
+
+- Assurez-vous tout d'abord que vos conteneurs httpd sont arrêtés ```docker stop <conteneur nom>```. Pour ceux qui travaillent sur les machines de l'IUT, attention à ne pas arrêter les conteneurs de vos collègues . Regardez bien que vous avez donné un nom au conteneur avec le paramètre ```--name httpd-<votre nom>``` et que vous pouvez le voir avec ```docker ps``` sous la colonne NAMES.
+
+- Tout d'abord, nous allons nous placer dans un dossier de votre choix sur la machine hôte (c'est la machine di-docker dans le machines de l'IUT.  faire un ```ssh di-docker```).
+
+- Au-dessus de ce dossier, créez un nouveau dossier que nous appellerons html : 
+```
+mkdir html
+```
+
+- Allez dans ce dossier html :
+```
+cd html
+```
+
+- Créez dans ce dossier un fichier ```index.html``` avec le contenu de votre choix.
+
+
+- Sur le dossier html, exécutez l'instruction suivante :
+```
+docker run --name httpd-<votre nom> -d -p <port hôte>:80 -v $(pwd):/usr/local/apache2/htdocs httpd
+```
+
+- Voyons la signification des différents paramètres : 
+    - ```--name httpd-<votre nom>``` : ce paramètre vous permet de nommer le conteneur avec le nom de votre choix. Assez utile pour le localiser ultérieurement, surtout si vous travaillez sur une machine à l'IUT.
+    - ```-d``` : ce paramètre permet d'exécuter le conteneur en arrière-plan (_dettached_).
+    - ```-p <port hôte>:80``` : comme nous l'avons déjà vu cette option vous permet de mapper le port 80 de votre conteneur au port désigné de l'hôte.
+    - ```-v $(pwd):/usr/local/apache2/htdocs``` : cette option nous permet de créer un point de montage (_volume_) entre l'hôte et le conteneur. 
+        - À gauche des deux-points ```:```, nous indiquons le dossier que nous voulons partager depuis l'hôte. Puisque nous sommes situés dans le dossier ```html```, la commande ```$(pwd)``` montre tout le chemin depuis la racine jusqu'au dossier actuel.
+        - À droite des deux-points ```:```, nous indiquons le dossier dans le conteneur. Dans ce cas, le dossier ```/usr/local/apache2/htdocs``` contient les pages Web desservies par le serveur Apache.
+    - ```httpd``` : enfin, nous indiquons l'image que nous voulons lancer.
+
+- Ouvrez un navigateur et entrez le nom de votre machine hôte et le port. **Qu'est-ce qui se passe ?** En effet, le contenu de votre dossier ```html``` local est désormais un dossier partagé avec le conteneur. Modifiez le contenu du fichier ```index.html``` et actualisez le navigateur.
+
+- A la fin, n'oubliez pas d'arrêter le conteneur :
+```
+docker stop httpd-<votre nom>
+```
 
 
 
