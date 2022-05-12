@@ -287,7 +287,7 @@ La commande ```docker cp``` copie le contenu d'un dossier ou fichier source vers
 </center><br />
 
 <ul>
-<li> A la fin, stopper le conteneur avec la commande <code>docker stop &lt;nom du conteneur&gt;</code> </li>
+<li> A la fin, stopper le conteneur avec la commande : <code>docker stop &lt;nom du conteneur&gt;</code> </li>
 </ul>
 </div>
 
