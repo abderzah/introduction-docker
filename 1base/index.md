@@ -284,7 +284,7 @@ La commande ```docker cp``` copie le contenu d'un dossier ou fichier source vers
 
 <center>
 <a href="/introduction-docker/1base/solutionSection322.html"><strong> Cliquez ici pour afficher la solution à l’exercice!!</strong></a>
-</center><br/ >
+</center><br />
 
 <ul>
 <li> A la fin, stopper le conteneur avec la commande <code>docker stop &lt;nom du conteneur&gt;</code> </li>
