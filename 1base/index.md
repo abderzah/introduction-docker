@@ -306,7 +306,7 @@ La commande ```docker cp``` copie le contenu d'un dossier ou fichier source vers
 
 #### 3.2.2. Volumes
 
-La copie de fichiers ou de dossiers entre la machine hôte et le conteneur vu dans la section précédente est une solution qui permet l'échange d'informations. Cependant, ce n'est pas le seul : les volumes permettent d'établir un point de montage entre les deux machines, afin qu'un répertoire puisse être partagé à tout moment.
+La copie de fichiers ou de dossiers entre la machine hôte et le conteneur vu dans la section précédente est une solution qui permet l'échange des informations. Cependant, ce n'est pas le seul : les volumes permettent d'établir un point de montage entre les deux machines, afin qu'un répertoire puisse être partagé à tout moment.
 
 **Dans cette section, nous allons apprendre à créer des volumes entre les deux machines en utilisant l'image ```httpd```.**
 
