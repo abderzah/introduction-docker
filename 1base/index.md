@@ -240,7 +240,9 @@ docker run --name httpd-<votre nom> -d -p <port hôte>:80 httpd
 - Ouvrez un navigateur Web et entrez ```<machine>:<port>``` où ```<port>``` fait référence au port désigné pour l'hôte et ```<machine>``` fait référence à la machine sur laquelle vous exécutez le conteneur : ```localhost``` si vous êtes sur votre machine personelle et ```di-docker``` si vous êtes sur une machine de l'IUT. Si vous avez suivi les étapes correctement, votre navigateur devrait afficher la page Web suivante :
 
 <div style="text-align: center;">
+
 ![It works](./images/itWorks.png)
+
 </div>
 
 <center>
