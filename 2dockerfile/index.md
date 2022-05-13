@@ -10,13 +10,12 @@ Jusqu'à présent, nous avons appris à utiliser les images disponibles sur hub.
 
 ## 1. Introduction à Dockerfile
 
-Les paramètres et les instructions d'un dockerfile sont nombreux, nous n'allons donc pas tous les voir. Au lieu de cela, nous allons travailler avec des exercices d'un ordre croissant de complexité qui nous permettront de découvrir progressivement comment créer notre propre dockerfile. Si nous avons besoin de connaître de nouvelles fonctionnalités ou la syntaxe d'une instruction spécifique, vous pouvez consulter [ce manuel de référence de dockerfile](https://docs.docker.com/engine/reference/builder/).
+Les paramètres et les instructions d'un dockerfile sont nombreux, nous n'allons donc pas tous les voir. Au lieu de cela, nous allons travailler avec des exercices avec un ordre croissant de complexité qui nous permettront de découvrir progressivement comment créer notre propre dockerfile. Si nous avons besoin de connaître de nouvelles fonctionnalités ou la syntaxe d'une instruction spécifique, vous pouvez consulter [ce manuel de référence de dockerfile](https://docs.docker.com/engine/reference/builder/).
 
+<a id='premierDockerfile'></a>
 ### 1.1. Notre premier dockerfile
 
-- Pour construire une image, un fichier ```Dockerfile``` est créé avec les instructions qui précisent ce qui va aller dans l'environnement, à l'intérieur du conteneur (réseaux, volumes, ports vers l'extérieur, fichiers qui sont inclus).
-
-- Indique comment et avec quoi construire l'image.
+- Pour construire une image, un fichier ```Dockerfile``` est créé avec les instructions qui précisent ce qui va aller dans l'environnement, à l'intérieur du conteneur (réseaux, volumes, ports vers l'extérieur, fichiers qui sont inclus). Un fichier ```Dockerfile```  indique comment et avec quoi construire l'image.
 
 - Voyons un exemple simple de fichier ```Dockerfile``` :
 
@@ -35,9 +34,9 @@ RUN echo 'Hello world! Voici notre premier dockerfile'
 # Rendre le port 80 accessible au monde en dehors de ce conteneur
 EXPOSE 80
 ```
-### 1.1.1. Structure des répertoires
+### 1.1.1. Structure de répertoires
 
-Le dockerfile doit être situé dans un répertoire spécifique. Ensuite, nous allons créer cette structure de répertoires :
+Dans cette section, nous allons apprendre à créer une structure de répertoires pour placer notre fichier ```Dockerfile``` :
 
 - Accédez à un répertoire de votre choix.
 
@@ -53,14 +52,14 @@ cd premierDockerfile
 
 - Dans le référentiel actuel, créez un fichier appelé ```Dockerfile``` et copiez le code du Dockerfile ci-dessus. 
 
-- Si nous voyons le code ```Dockerfile```, il y a une ligne dans laquelle nous indiquons que nous voulons copier le répertoire ```html``` de l'hôte dans le répertoire ```XX``` du conteneur. Nous devons donc maintenant créer ce répertoire ```html```. Tapez :
+- Si nous voyons le code du ```Dockerfile```, il y a une ligne dans laquelle nous indiquons que nous voulons copier le répertoire ```html``` de l'hôte dans le répertoire ```/usr/local/apache2/htdocs/``` du conteneur. Nous devons donc maintenant créer ce répertoire ```html```. Tapez :
 ```
 mkdir html
 ```
 
 - Dans le répertoire ```html```, créez un fichier ```index.html``` avec le contenu html de votre choix.
 
-- Revenons au répertoire ```premier Dockerfile``` pour que la commande ```tree``` affiche cette arborescence :
+- Revenons au répertoire ```premierDockerfile``` pour que la commande ```tree``` affiche cette arborescence :
 
 ```
 $ tree
@@ -82,17 +81,19 @@ docker build -t <choisir-un-nom-pour-l'image> .
 ```
 - Voici la signification des différents paramètres :
     - ```docker build``` : commande qui nous permet d'indiquer que nous allons construire une nouvelle image.
-    - ```-t <choisir-un-nom-pour-l'image>``` : indique le nom de l'image que nous allons construire. Essayez d'être bref mais descriptif. Un exemple : ```<votre nom>-httpd-1ere-img```
-    - ```.``` : le dernier point indique le répertoire où se trouve le fichier dockerfile.
+    - ```-t <choisir-un-nom-pour-l'image>``` : indique le nom de l'image que nous allons construire. Essayez d'être bref mais descriptif. Un exemple : ```<votre nom>-httpd-img```
+    - ```.``` : le dernier point indique le répertoire où se trouve le fichier dockerfile (dans notre cas, c'est le répertoire courant).
 
 - Ensuite, lancer le serveur web :
 ```shell
 docker run --name <nom du conteneur de votre choix> -d -p <port hôte>:80 <nom-de-l'image-choisie>
 ```
 
-- Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez ```localhost:<port hôte>```
+- Vérifiez que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez ```localhost:<port hôte>```
 
-- Vérifier que le conteneur associé est actif :
+- Vérifiez que le fichier index.html affiché est celui que vous avez dans le dossier html de l'hôte.
+
+- S'il y a quelque chose qui ne fonctionne pas, vous pouvez d'abord vérifier que le conteneur associé à l'image est actif :
 ```shell
 docker ps
 ```
@@ -125,7 +126,9 @@ docker rm b8f8f406b03c
 
 ### 1.2. Installer un service apache à partir d'une image vierge debian
 
-L'exemple dockerfile ci-dessus est très simple, puisque l'image httpd est préconfigurée pour lancer un service apache. Cependant, pourrait-on configurer une image avec le service apache à partir d'une image debian sur laquelle apache n'est pas installé ? La réponse est oui et nous apprendrons comment dans cette section.
+L'exemple dockerfile ci-dessus est très simple, puisque l'image httpd est préconfigurée pour lancer un service apache. Cependant, **pourrait-on configurer une image avec le service apache à partir d'une image debian sur laquelle apache n'est pas installé ?** La réponse est oui et nous apprendrons comment dans cette section.
+
+- Voir ci-dessous le dockerfile correspondant :
 
 ```
 # Utiliser l'image debia officielle comme image parent
@@ -146,23 +149,51 @@ EXPOSE 80
 CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]
 ```
 
+<div id="homework">
+
+<p>Lisez attentivement le dockerfile et essayez de le comprendre. Pour voir ce que signifie chaque ligne, vous pouvez consulter <a href="https://docs.docker.com/engine/reference/builder/">ce manuel</a>.</p>
+
+<p>En suivant les étapes décrites dans l'exemple précédent, créez une image à partir du nouveau fichier <code>dockerfile</code> proposé et testez si tout fonctionne correctement.</p>
+
+</div>
+
 [Haut de la page](#main)
 
 ---
 
 ## 2. Dockerfile + github
 
-Faciliter le deployement des applications.
+Au début de ce tutoriel, nous avons mentionné que : _**"L’objectif de docker est de développer, déployer et exécuter des applications dans un environnement isolé appelé conteneur"**_. Grâce à l'aide de github, nous allons voir dans cette section à quel point il est simple de déployer un service basé sur docker sur n'importe quelle machine ayant accès à git et docker. En fait, il suffit de sauvegarder la structure du répertoire avec le fichier dockerfile que nous avons vu précédemment dans un dépôt github.
 
-[Exemple de serveur apache prêt à être déployé](https://github.com/juanluck/exempleDockerfile)
+- Reprenons l'exercice décrit dans la section [1.1. Notre premier dockerfile](#premierDockerfile)  et sauvegardons toute la structure du répertoire dans un référentiel github. 
+
+- Vous pouvez trouver le résultat dans [ce dépôt github](https://github.com/juanluck/exempleDockerfile). Voici un exemple de serveur Apache prêt à être déployé.
+
+<div id="homework">
+
+<p>Pour voir la simplicité de déploiement d'un tel service avec l'aide de github. Accédez <a href="https://github.com/juanluck/exempleDockerfile">au référentiel</a> et suivez les instructions pour le déployer sur votre machine.</p>
+
+</div>
+
+En principe, vous connaissez bien cet exercice précédent et cela ne semble pas être un mystère. Cependant, nous pouvons compliquer les choses autant que nous le voulons. Imaginons qu'au lieu d'un simple service Apache, nous voulions avoir **un serveur Apache + MariaDB + PHP** (MariaDB est une version open-source de MySQL). Eh bien, avec cette façon de travailler, nous pouvons déployer ce service sur n'importe quelle machine en quelques secondes : **vous vous rendez compte de la puissance de cette technologie ?**
+
+<div id="homework">
+
+<p>
+En suivant les instructions de <a href="https://github.com/juanluck/lampDockerfile">ce dépôt github</a>, déployez un serveur LAMP (Apache + MariaDB + PHP) sur votre machine.
+</p>
+
+<p>
+Ne restez pas là. Étudiez bien la structure des répertoires et le contenu des différentes instructions du dockerfile et des autres fichiers.
+</p>
+</div>
 
 
-[Exemple de serveur apache + mariadb + php (lamp)](https://github.com/juanluck/lampDocker)
 [Haut de la page](#main)
 
 ---
 
-## 3. (Avancé et facultatif)  Docker compose
+## 3. Un point sur Docker compose
 
 Le service docker compose n'est pas installé sur les machines de l'IUT.
 
