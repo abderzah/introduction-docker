@@ -60,7 +60,6 @@ mkdir html
 - Dans le répertoire ```html```, créez un fichier ```index.html``` avec le contenu html de votre choix.
 
 - Revenons au répertoire ```premierDockerfile``` pour que la commande ```tree``` affiche cette arborescence :
-
 ```
 $ tree
 .
@@ -180,7 +179,7 @@ En principe, vous connaissez bien cet exercice précédent et cela ne semble pas
 <div id="homework">
 
 <p>
-En suivant les instructions de <a href="https://github.com/juanluck/lampDockerfile">ce dépôt github</a>, déployez un serveur LAMP (Apache + MariaDB + PHP) sur votre machine.
+En suivant les instructions de <a href="https://github.com/juanluck/lampDocker">ce dépôt github</a>, déployez un serveur LAMP (Apache + MariaDB + PHP) sur votre machine.
 </p>
 
 <p>
@@ -195,9 +194,26 @@ Ne restez pas là. Étudiez bien la structure des répertoires et le contenu des
 
 ## 3. Un point sur Docker compose
 
-Le service docker compose n'est pas installé sur les machines de l'IUT.
+Ce cours se termine ici, mais il vaut la peine de faire un point rapide sur des autres outils Docker dans le cas où vous souhaitez continuer vos recherches au-delà du Dockerfile.
 
-[Exemple de docker compose à plusieurs conteneurs](https://github.com/juanluck/docker_customer_catalog)
+Il existe des services, tels que Apache + MariaDB + PHP que nous avons vus, qui ne sont en fait pas un mais plusieurs services. Dans ces cas, normalement, nous n'allons pas les gérer avec un seul conteneur mais avec plusieurs conteneurs qui interagissent les uns avec les autres. On parle de services multi-conteneurs. Dans ce cas, **Docker Compose** est un outil permettant de définir et d'exécuter des applications Docker multi-conteneurs.
+
+Nous n'allons pas entrer dans le détail du fonctionnement de docker compose, mais ici vous pouvez accéder à un [serveur LAMP](https://github.com/juanluck/docker_customer_catalog) géré dans deux conteneurs avec **docker compose**. Vous pouvez suivre les instructions pour le déployer sur votre machine.
+
+**Attention !! : docker compose n'est pas disponible sur les machines de l'IUT.**
+
+
+Si vous souhaitez en savoir plus, vous pouvez vous renseigner sur les technologies suivantes :
+
+- [Docker compose](https://docs.docker.com/engine/reference/commandline/compose/)
+
+- [Intégration continue](https://docs.docker.com/ci-cd/best-practices/)
+
+- [Docker Swarm](https://docs.docker.com/engine/swarm/)
+
+- [Kubernetes](https://fr.wikipedia.org/wiki/Kubernetes)
+
+
 
 
 [Haut de la page](#main)
