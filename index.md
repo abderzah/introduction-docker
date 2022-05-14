@@ -18,13 +18,32 @@ Dans ce cours nous verrons comment utiliser Docker pour le développement d'appl
 >1. Connaître les composants de base de Docker
 2. Créer des conteneurs à partir d'images Docker Hub
 3. Apprenez à utiliser Dockerfile pour la création d'images
-4. Utiliser Docker Compose pour créer des environnements de conteneurs
-5. Utiliser des volumes pour le stockage persistant
+4. Utiliser des volumes pour le stockage persistant
 
 [Haut de la page](#main)
 
 
 ---
+
+## Découverte de docker
+
+>1. [TP1 Fonctionnement de base de Docker](./1base/index.md)
+2. [TP2 Dockerfile pour la création d’images](./2dockerfile/index.md)
+
+[Haut de la page](#main)
+
+
+---
+
+## Consignes projet SAE 2.03
+
+- Le lien vers les consignes du projet SAE sera en ligne le mardi 17 mai.
+
+[Haut de la page](#main)
+
+
+---
+
 
 ## Installation
 
