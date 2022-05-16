@@ -37,7 +37,8 @@ Dans ce cours nous verrons comment utiliser Docker pour le développement d'appl
 
 ## Consignes projet SAE 2.03
 
-- Le lien vers les consignes du projet SAE sera en ligne le mardi 17 mai.
+-  [Consignes Projet](./projet/index.md)
+
 
 [Haut de la page](#main)
 
