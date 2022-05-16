@@ -35,3 +35,12 @@ docker exec -it <nom-du-conteneur> /bin/bash
 - D2 - ROVIRA Adrien
 - D1 - CARPENTIER Thibault
 
+
+**Equipe 1 :**
+
+- A1 - AIREY Théo
+- A2 - LE MEUR Pierre
+- A2 - SAHUC Maxime
+
+
+
