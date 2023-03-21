@@ -166,11 +166,11 @@ Au début de ce tutoriel, nous avons mentionné que : _**"L’objectif de docker
 
 - Reprenons l'exercice décrit dans la section [1.1. Notre premier dockerfile](#premierDockerfile)  et sauvegardons toute la structure du répertoire dans un référentiel github. 
 
-- Vous pouvez trouver le résultat dans [ce dépôt github](https://github.com/juanluck/exempleDockerfile). Voici un exemple de serveur Apache prêt à être déployé.
+- Vous pouvez trouver le résultat dans [ce dépôt github](https://github.com/abderzah/exempleDockerfile). Voici un exemple de serveur Apache prêt à être déployé.
 
 <div id="homework">
 
-<p>Pour voir la simplicité de déploiement d'un tel service avec l'aide de github. Accédez <a href="https://github.com/juanluck/exempleDockerfile">au référentiel</a> et suivez les instructions pour le déployer sur votre machine.</p>
+<p>Pour voir la simplicité de déploiement d'un tel service avec l'aide de github. Accédez <a href="https://github.com/abderzah/exempleDockerfile">au référentiel</a> et suivez les instructions pour le déployer sur votre machine.</p>
 
 </div>
 
@@ -179,7 +179,7 @@ En principe, vous connaissez bien cet exercice précédent et cela ne semble pas
 <div id="homework">
 
 <p>
-En suivant les instructions de <a href="https://github.com/juanluck/lampDocker">ce dépôt github</a>, déployez un serveur LAMP (Apache + MariaDB + PHP) sur votre machine.
+En suivant les instructions de <a href="https://github.com/abderzah/lampDocker">ce dépôt github</a>, déployez un serveur LAMP (Apache + MariaDB + PHP) sur votre machine.
 </p>
 
 <p>
@@ -198,7 +198,7 @@ Ce cours se termine ici, mais il vaut la peine de faire un point rapide sur des 
 
 Il existe des services, tels que Apache + MariaDB + PHP que nous avons vus, qui ne sont en fait pas un mais plusieurs services. Dans ces cas, normalement, nous n'allons pas les gérer avec un seul conteneur mais avec plusieurs conteneurs qui interagissent les uns avec les autres. On parle de services multi-conteneurs. Dans ce cas, **Docker Compose** est un outil permettant de définir et d'exécuter des applications Docker multi-conteneurs.
 
-Nous n'allons pas entrer dans le détail du fonctionnement de docker compose, mais ici vous pouvez accéder à un [serveur LAMP](https://github.com/juanluck/docker_customer_catalog) géré dans deux conteneurs avec **docker compose**. Vous pouvez suivre les instructions pour le déployer sur votre machine.
+Nous n'allons pas entrer dans le détail du fonctionnement de docker compose, mais ici vous pouvez accéder à un [serveur LAMP](https://github.com/abderzah/docker_customer_catalog) géré dans deux conteneurs avec **docker compose**. Vous pouvez suivre les instructions pour le déployer sur votre machine.
 
 **Attention !! : docker compose n'est pas disponible sur les machines de l'IUT.**
 
