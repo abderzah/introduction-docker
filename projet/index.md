@@ -26,7 +26,7 @@
 - Le projet doit fournir un seul service et non plusieurs. Cela signifie plusieurs choses :
     - Nous allons utiliser un seul dockerfile et non des outils plus avancés comme docker compose ou docker swarm.
     - Cela signifie que le conteneur ne doit fournir qu'un seul service, par exemple un serveur à la demande, et non plusieurs.
-    - En ce sens, le projet devrait ressembler un peu à l'exemple d'un [serveur Apache vu en cours](https://github.com/juanluck/exempleDockerfile/) mais avec un peu plus de complexité.
+    - En ce sens, le projet devrait ressembler un peu à l'exemple d'un [serveur Apache vu en cours](https://github.com/abderzah/exempleDockerfile/) mais avec un peu plus de complexité.
  
 
 ## 3. Instructions pour le rapport de projet
