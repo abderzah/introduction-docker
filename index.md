@@ -99,7 +99,8 @@ Dans ce cours nous verrons comment utiliser Docker pour le développement d'appl
 </div>
 
 [Haut de la page](#main)
-
+Cette documentation a été rédigée par notre collègue Juanlu qui travaille maintenant à Grenade en Espagne. 
+Voici le lien originel de la documentation :  [Juanlu](https://github.com/juanluck/Inroduction-Git/).
 
 ---
 -->
