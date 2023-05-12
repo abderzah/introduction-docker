@@ -47,7 +47,7 @@
 
 ## 5. Date limite pour le dépôt du projet
 
-- **Date à déterminer (25 mai 2022 minuit ??)**
+- **Date (19 Mai 2023 minuit)**
 
 ## 6. Soutenances
 
