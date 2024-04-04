@@ -43,15 +43,15 @@
 
 ## 4. Dépôt du projet
 
-- Pour déposer votre projet, allez sur [ce dépôt github](https://github.com/abderzah/depot-de-projets-SAE203-2023/) et suivez les instructions.
+- Pour déposer votre projet, allez sur [ce dépôt github](https://github.com/abderzah/depot-de-projets-SAE203-2024/) et suivez les instructions.
 
 ## 5. Date limite pour le dépôt du projet
 
-- **Date (19 Mai 2023 minuit)**
+- **Date (16 Avril 2024 minuit)**
 
 ## 6. Soutenances
 
-- Dans la soutenance, chaque équipe disposera d'un temps compris entre 10 et 15 minutes (à décider ultérieurement).
+- Dans la soutenance, chaque équipe disposera d'un temps compris entre 10 et 15 minutes.
 
 - En utilisant le site web du projet comme support, le format de la présentation consistera en une brève explication du projet et une démonstration pratique.
 
