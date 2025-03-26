@@ -43,11 +43,11 @@
 
 ## 4. Dépôt du projet
 
-- Pour déposer votre projet, allez sur [ce dépôt github](https://github.com/abderzah/depot-de-projets-SAE203-2024/) et suivez les instructions.
+- Pour déposer votre projet, allez sur [ce dépôt github](https://github.com/abderzah/SAE203-depot-de-projets-2025/) et suivez les instructions.
 
 ## 5. Date limite pour le dépôt du projet
 
-- **Date (16 Avril 2024 minuit)**
+- **Date (Vendredi 2 Mai 2025)**
 
 ## 6. Soutenances
 
